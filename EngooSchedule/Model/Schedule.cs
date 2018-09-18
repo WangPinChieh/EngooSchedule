@@ -14,6 +14,11 @@ namespace EngooSchedule.Model
         public string status { get; set; }
         public bool time_passed { get; set; }
         public bool locked_lesson { get; set; }
+        public DateTime LessonDateTime {
+            get {
+                return Convert.ToDateTime(lesson_date + " " + scheduled_start_time);
+            }
+        }
 
     }
 }

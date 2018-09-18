@@ -96,7 +96,7 @@ namespace EngooSchedule
                                         {
                                             string _SerializedSchedule = JsonConvert.SerializeObject(_Result.schedules.result);
                                             List<Schedule> _Schedules = JsonConvert.DeserializeObject<List<Schedule>>(_SerializedSchedule);
-                                            if (_Schedules != null && _Schedules.Count > 0)
+                                            if (_Schedules != null && _Schedules.Count > 0 && _Schedules.Any(m => m.LessonDateTime >= SystemVars.Configs.StartDateTime && m.LessonDateTime <= SystemVars.Configs.EndDateTime))
                                             {
                                                 lock (m_NotificationMessagesLock)
                                                 {

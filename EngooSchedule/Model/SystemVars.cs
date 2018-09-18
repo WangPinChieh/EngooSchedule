@@ -21,6 +21,8 @@ namespace EngooSchedule.Model
                     m_Configs.TeachersID = ConfigurationManager.AppSettings["TeacherIDs"].ToString().Split('|').ToList();
                     m_Configs.RefreshMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["RefreshMinutes"]);
                     m_Configs.EngooUrl = ConfigurationManager.AppSettings["EngooUrl"];
+                    m_Configs.StartTime = ConfigurationManager.AppSettings["StartTime"];
+                    m_Configs.EndTime = ConfigurationManager.AppSettings["EndTime"];
                 }
 
                 return m_Configs;
@@ -31,5 +33,19 @@ namespace EngooSchedule.Model
         public List<string> TeachersID { get; set; }
         public int RefreshMinutes { get; set; }
         public string EngooUrl { get; set; }
+        public string StartTime { get; set; }
+        public DateTime StartDateTime
+        {
+            get
+            {
+                return Convert.ToDateTime(DateTime.Now.Date.ToString("yyyy/MM/dd ") + StartTime);
+            }
+        }
+        public string EndTime { get; set; }
+        public DateTime EndDateTime {
+            get {
+                return Convert.ToDateTime(DateTime.Now.Date.ToString("yyyy/MM/dd ") + EndTime);
+            }
+        }
     }
 }
