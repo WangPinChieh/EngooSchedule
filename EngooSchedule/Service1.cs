@@ -30,9 +30,5 @@ namespace EngooSchedule
         public void Start(string[] args) {
             this.OnStart(args);
         }
-
-        public void Stop() {
-            this.OnStop();
-        }
     }
 }

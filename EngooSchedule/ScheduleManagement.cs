@@ -180,7 +180,7 @@ namespace EngooSchedule
                 foreach (Schedule schedule in schedules)
                 {
                     _Html += "<tr>";
-                    _Html += string.Format("<td>{0}</td>", schedule.lesson_date + " " + schedule.scheduled_start_time);
+                    _Html += string.Format("<td>{0}</td>", schedule.LessonDateTimeStr);
                     if (schedule.status == "1")
                         _Html += string.Format("<td style='color: red;'>X</td>");
                     else

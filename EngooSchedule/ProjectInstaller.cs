@@ -14,6 +14,10 @@ namespace EngooSchedule
         public ProjectInstaller()
         {
             InitializeComponent();
+            this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.serviceInstaller1.ServiceName = "Engoo Schedule";
+            this.serviceController1.ServiceName = "Engoo Schedule";
+            this.serviceInstaller1.DisplayName = "Engoo Schedule";
         }
     }
 }
